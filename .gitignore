@@ -1,0 +1,29 @@
+# 系统文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+
+# 临时/备份
+*.bak
+*.tmp
+*_原始*
+*_temp.*
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 构建产物（data.json 是 js/data.js 的原始副本，浏览器只用 data.js）
+data.json
+
+# 原始素材（体积大，不纳入版本控制）
+图片集/
+
+# 开发截图/临时文件
+shot-*.png
+_dims.txt

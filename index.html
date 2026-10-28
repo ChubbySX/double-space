@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我们的胶片时光 · OUR FILM ROLL</title>
+<meta name="description" content="把回忆，定格成胶片 —— 我们的小小情侣空间">
+<link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body data-theme="light">
+
+<!-- ================= 密码门 ================= -->
+<div class="site-gate" id="siteGate">
+  <div class="gate-card">
+    <div class="gate-logo">❤</div>
+    <p class="gate-hint">欢迎来到我们的胶片时光<br>请输入密码以进入</p>
+    <input type="password" class="gate-input" id="gateInput" placeholder="密码" autocomplete="off" spellcheck="false">
+    <button class="gate-btn" id="gateBtn">进入 →</button>
+    <p class="gate-error" id="gateError"></p>
+  </div>
+</div>
+
+<!-- ================= 开场：胶片卷片 ================= -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-frame">
+    <div class="intro-mark">🎞️</div>
+    <div class="intro-brand" id="introBrand">OUR FILM ROLL</div>
+    <div class="intro-sub" id="introSub">把回忆，定格成胶片</div>
+    <div class="intro-load"><span class="intro-load-fill" id="introLoadFill"></span></div>
+    <div class="intro-preload" id="introPreload">正在冲洗照片…</div>
+  </div>
+</div>
+
+<!-- ================= 顶栏 ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#home">🎞️ 我们的胶片时光</a>
+    <nav class="nav-links" id="navLinks">
+      <a class="nav-link" href="#home">首页</a>
+      <a class="nav-link" href="#count">纪念日</a>
+      <a class="nav-link" href="#photos">相册</a>
+      <a class="nav-link" href="#stories">故事</a>
+      <a class="nav-link" href="#playlist">唱片机</a>
+      <a class="nav-link" href="#messages">留言板</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" title="胶片负片模式（日/夜）">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 首页 Hero ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg">
+    <img class="hero-photo" id="heroPhoto" alt="我们的胶片封面">
+    <div class="hero-filmstrip hero-filmstrip-top"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="hero-filmstrip hero-filmstrip-bottom"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="hero-vignette"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-kicker" id="heroFilmNo">第 66 卷 · 未完待续</p>
+    <h1 class="hero-title" id="heroTitle">我们的恋爱胶片</h1>
+    <p class="hero-sub" id="heroDesc">把每一个心动瞬间，都冲印成永不褪色的回忆</p>
+    <p class="hero-motto" id="heroMotto"></p>
+    <div class="hero-couple" id="heroCouple"></div>
+    <a class="hero-scroll" href="#count">↓ 打开我们的相册</a>
+  </div>
+</section>
+
+<!-- ================= 纪念日倒计时 ================= -->
+<section class="section" id="count">
+  <div class="section-head">
+    <p class="section-label">ANNIVERSARY</p>
+    <h2 class="section-title">纪念日</h2>
+    <p class="section-desc" id="countDesc"></p>
+  </div>
+  <div class="count-cards" id="countCards">
+    <div class="count-card"><b class="count-num" id="cdDays">—</b><span class="count-unit">天</span></div>
+    <div class="count-card"><b class="count-num" id="cdHours">—</b><span class="count-unit">时</span></div>
+    <div class="count-card"><b class="count-num" id="cdMins">—</b><span class="count-unit">分</span></div>
+    <div class="count-card"><b class="count-num" id="cdSecs">—</b><span class="count-unit">秒</span></div>
+  </div>
+  <p class="count-note" id="countNote"></p>
+</section>
+
+<!-- ================= 相册 ================= -->
+<section class="section section-alt" id="photos">
+  <div class="section-head">
+    <p class="section-label">PHOTO ALBUMS</p>
+    <h2 class="section-title">我们的相册</h2>
+    <p class="section-desc">每一张，都是不想忘记的瞬间</p>
+    <div class="view-toggle" id="viewToggle">
+      <button class="view-btn is-active" data-view="card">🖼️ 卡片</button>
+      <button class="view-btn" data-view="masonry">🎞️ 胶片墙</button>
+    </div>
+  </div>
+  <div class="album-tabs" id="albumTabs"></div>
+  <div class="daily-grid" id="photoGrid"></div>
+  <p class="section-empty" id="photoEmpty">相册还是空的，快往 content/photos/ 里放照片吧 🎞️</p>
+</section>
+
+<!-- ================= 故事时间线 ================= -->
+<section class="section" id="stories">
+  <div class="section-head">
+    <p class="section-label">OUR STORY</p>
+    <h2 class="section-title">我们的故事</h2>
+    <p class="section-desc">从相遇到现在，胶片一直转着</p>
+  </div>
+  <div class="story-timeline" id="storyTimeline"></div>
+</section>
+
+<!-- ================= 唱片机 ================= -->
+<section class="section section-alt" id="playlist">
+  <div class="section-head">
+    <p class="section-label">VINYL RECORDS</p>
+    <h2 class="section-title">我们的唱片机</h2>
+    <p class="section-desc">一起听的歌，都刻进这张唱片里</p>
+  </div>
+  <div class="vinyl-layout">
+    <div class="vinyl-player" id="vinylPlayer">
+      <div class="vinyl-disc" id="vinylDisc"><div class="vinyl-label" id="vinylLabel">OUR<br>FILM<br>ROLL</div></div>
+      <div class="vinyl-tonearm" id="tonearm"></div>
+    </div>
+    <div class="vinyl-info">
+      <p class="vinyl-now" id="vinylNow">—</p>
+      <p class="vinyl-track" id="vinylTrack">还没有播放</p>
+      <audio id="bgMusic" preload="none"></audio>
+      <div class="vinyl-controls">
+        <button class="vc-btn" id="musicPrev" title="上一首">⏮</button>
+        <button class="vc-btn vc-play" id="musicPlay" title="播放">▶</button>
+        <button class="vc-btn" id="musicNext" title="下一首">⏭</button>
+      </div>
+      <ul class="vinyl-tracklist" id="trackList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 留言板 ================= -->
+<section class="section" id="messages">
+  <div class="section-head">
+    <p class="section-label">MESSAGES</p>
+    <h2 class="section-title">甜蜜留言板</h2>
+    <p class="section-desc">想对 Ta 说的话，都留在这里</p>
+  </div>
+  <div class="msg-board">
+    <div class="msg-typewriter" id="msgTypewriter"></div>
+    <form class="msg-form" id="msgForm">
+      <input class="msg-input" id="msgInput" placeholder="" maxlength="80" autocomplete="off">
+      <button class="msg-btn" type="submit">贴上 🖇️</button>
+    </form>
+    <div class="msg-wall" id="msgWall"></div>
+  </div>
+</section>
+
+<!-- ================= 页脚 ================= -->
+<footer class="site-footer">
+  <p class="footer-motto" id="footerMotto"></p>
+  <p class="footer-text" id="footerText"></p>
+  <p class="footer-couple" id="footerCouple"></p>
+</footer>
+
+<!-- ================= 灯箱 ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="关闭">✕</button>
+  <div class="lightbox-body" id="lightboxBody"></div>
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<!-- ================= 回到顶部 ================= -->
+<button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script src="js/data.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
